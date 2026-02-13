@@ -2,11 +2,13 @@ import requests
 from openpyxl import Workbook, load_workbook
 import time
 from datetime import datetime
+import os
 
 # ================= Telegram & Crypto API Setup =================
-BOT_TOKEN = "8320044697:AAGueY738b3l4l3mtZKrgin34-Hip4Ac6Bw"
-CHAT_ID = "5029207640"
-API_KEY = "0b14c1a43cab9703b36444e5aa748a6f0fa3dc9a7e6b07008d2c9a5abd9cd0e5"
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
+API_KEY = os.environ["API_KEY"]
+
 cryptos = ["BTC", "ETH", "SOL", "MANA", "SAND", "DOGE"]
 currency = "USD"
 crypto_url = "https://min-api.cryptocompare.com/data/pricemulti"
@@ -125,3 +127,4 @@ while True:
 
     else:
         print("Invalid selection. Try again.")
+
